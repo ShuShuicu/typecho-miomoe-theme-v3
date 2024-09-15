@@ -1,11 +1,20 @@
 //** 2024 MioMoe! Copyright By ShuShuicu */
 console.log("\n%c %s %c %s %c %s\n", "color: #fff; background: #34495e; padding:5px 0;", "Theme: MioV3", "background: #fadfa3; padding:5px 0;", "https://blog.miomoe.cn", "color: #fff;background: #d6293e; padding:5px 0;", "B站@ShuShuicu");
 
-// 图片类名 
-var images = document.getElementsByTagName('img');
-for (var i = 0; i < images.length; i++) {
-    images[i].classList.add('mdui-ripple', 'mdui-img-fluid', 'mdui-img-rounded');
-}
+// 等待页面内容完全加载后执行
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化ViewImage
+    if (window.ViewImage) {
+        ViewImage.init('.mdui-card img, .mdui-hoverable img'); // 修改选择器确保匹配图片
+    }
+
+    // 为所有图片添加类名
+    var images = document.getElementsByTagName('img');
+    for (var i = 0; i < images.length; i++) {
+        images[i].classList.add('mdui-ripple', 'mdui-img-fluid', 'mdui-img-rounded');
+    }
+});
+
 
 // 视频类名 
 var images = document.getElementsByTagName('video');
