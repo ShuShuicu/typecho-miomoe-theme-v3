@@ -1,0 +1,33 @@
+body {
+    background-color: #0099CC;
+    color: #FFFFFF;
+    font-family: Microsoft Yahei, "Helvetica Neue", Helvetica, Hiragino Sans GB, WenQuanYi Micro Hei, sans-serif;
+    margin-left: 100px;
+}
+.face {
+    font-size: 100px;
+}
+p{
+    font-size: 24px;
+    padding: 8px;
+    line-height: 40px;
+}
+.tips {
+    font-size: 16px
+}
+/*针对小屏幕的优化*/
+@media screen and (max-width: 600px) {
+    body{
+        margin: 0 10px;
+    }
+    p{
+        font-size: 18px;
+        line-height: 30px;
+    }
+    .tips {
+        display: inline-block;
+        padding-top: 10px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
