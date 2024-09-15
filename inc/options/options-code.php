@@ -44,7 +44,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             'deep-purple'=> _t('深紫色'),
             'red'=> _t('红色'),
         ),  
-        'indigo',          
+        'deep-orang',          
         _t('副(强)色调'),   
         _t('请选择主题的副(强)色调。') 
     );   
@@ -147,29 +147,38 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $sidebarTitle = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarTitle', 
         NULL, 
-        '请输入侧边标题',
+        NULL,
         _t('侧边标题'), 
-        _t('请输入侧边标题，一般为网站或作者名称，留空则显示默认标题。')
+        _t('请输入侧边标题，一般为网站或作者名称，留空则显示站点标题。')
     );
     $form->addInput($sidebarTitle);
-
+    // 侧边副标题
     $sidebarSubTitle = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarSubTitle', 
         NULL, 
-        '请输入侧边副标题',
+        NULL,
         _t('侧边副标题'), 
-        _t('请输入侧边副标题，一般为网站关键词或作者说明，留空则不显示。')
+        _t('请输入侧边副标题，一般为网站关键词或作者说明，留空则显示站点副标题。')
     );
     $form->addInput($sidebarSubTitle);
-
+    // 侧边图片
     $sidebarImg = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarImg', 
         NULL, 
         NULL, 
         _t('侧边图片'), 
-        _t('请输入侧边图片链接，一般为网站favicon或作者头像，留空则显示默认图片。<hr>')
+        _t('请输入侧边图片链接，一般为网站favicon或作者头像，留空则显示神鹰黑手哥。')
     );
     $form->addInput($sidebarImg);
+    // 侧边介绍
+    $sidebarInfo = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'sidebarInfo', 
+        NULL, 
+        NULL, 
+        _t('侧边介绍'), 
+        _t('请输入侧边介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font><hr>')
+    );
+    $form->addInput($sidebarInfo);
 
     // 备案号
     $icpCode = new Typecho_Widget_Helper_Form_Element_Text(

@@ -1,7 +1,6 @@
 <?php 
 /**
  * 404页面
- * 
  * @package MioV3
  * @author 鼠子(ShuShuicu)
  * @link https://blog.miomoe.cn/

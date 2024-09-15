@@ -58,7 +58,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
+<?php 
+$this->need('comments.php'); 
+?>
 </div>
 <?php 
-$this->need('inc/sidebar/sidebar.php'); 
+$this->need('sidebar.php'); 
 ?>

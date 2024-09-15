@@ -42,7 +42,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <div class="mdui-collapse-item-body mdui-list">
                         <?php \Widget\Metas\Category\Rows::alloc()->to($cates); ?>
                         <?php while ($cates->next()): ?>
-                        <a href="<?php echo $cates->permalink(); ?>" mdui-tooltip="{content: '查看分类', position: 'bottom'}" class="mdui-list-item mdui-ripple"><?php echo $cates->name(); ?> (<?php echo $cates->count(); ?>)</a>
+                        <a href="<?php echo $cates->permalink(); ?>" mdui-tooltip="{content: '查看分类', position: 'bottom'}" class="mdui-list-item mdui-ripple"><div class="mdui-list-item-content"><?php echo $cates->name(); ?></div> <div class="mdui-text-color-orange"><?php echo $cates->count(); ?></div></a>
                         <?php endwhile; ?>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         <?php $this->widget('Widget_Contents_Post_Date','type=month&format=Y年n月')->parse('
 				<a href="{permalink}" class="mdui-list-item mdui-ripple">
 					<div class="mdui-list-item-content">{date}</div>
-					<div class="mdui-text-color-blue-900">{count}</div>
+					<div class="mdui-text-color-orange">{count}</div>
 				</a>'); ?>
                     </div>
                 </div>

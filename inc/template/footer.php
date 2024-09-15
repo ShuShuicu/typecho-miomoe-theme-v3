@@ -9,7 +9,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
 <div class="mdui-col-xs-12">
 <div class="mdui-m-y-2 mdui-typo mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px;">
-    <footer style="display:flex;">
+    <footer style="display:flex;" id="bottom">
         <div class="mdui-typo-body-1-opacity mdui-text-left">
             Powered by <a href="http://typecho.org" target="_blank" rel="external nofollow noopener">Typecho</a>
             <br>© Copyright <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>
@@ -38,6 +38,16 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 <a href="https://blog.miomoe.cn/" target="_blank">
                     <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-pink" mdui-tooltip="{content:'同款主题'}">
                         <i class="mdui-icon material-icons">code</i>
+                    </button>
+                </a>
+                <a href="#top">
+                    <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-blue" mdui-tooltip="{content:'网站顶部'}">
+                        <i class="mdui-icon material-icons">keyboard_arrow_up</i>
+                    </button>
+                </a>
+                <a href="#bottom">
+                    <button class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-cyan" mdui-tooltip="{content:'网站底部'}">
+                        <i class="mdui-icon material-icons">keyboard_arrow_down</i>
                     </button>
                 </a>
                 <button id="searchFooter" class="mdui-fab mdui-fab-mini mdui-ripple mdui-color-red" mdui-tooltip="{content:'搜索文章'}">

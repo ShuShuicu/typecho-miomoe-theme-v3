@@ -11,7 +11,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="mdui-typo mdui-center">
         <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
             <div class="mdui-card-media mdui-hoverable">
-                <?php  
+            <?php  
                 // 假设get_ArticleThumbnail函数返回第一张图片的URL，如果没有则返回null  
                 $thumbnailStyle = $this->fields->thumbnail_Style; // 假设这里直接访问字段值，具体取决于你的Typecho字段处理方式  
                 $thumbnailUrl = $thumbnailStyle ? $thumbnailStyle : get_ArticleThumbnail($this);  
@@ -71,6 +71,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
+<?php 
+$this->need('comments.php'); 
+?>
 </div>
 <?php 
 $this->need('inc/sidebar/sidebar.php'); 

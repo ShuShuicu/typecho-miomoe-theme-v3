@@ -28,7 +28,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <?php $this->options->cssStyleCode(); ?>
 </head>
 
-<body class="mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-<?php echo $this->options->themePrimary ? $this->options->themePrimary : $this->options->themePrimary . 'blue-grey'; ?> mdui-theme-accent-<?php echo $this->options->accentPrimary ? $this->options->accentPrimary : $this->options->accentPrimary . 'indigo'; ?> mdui-loaded">
+<body class="mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-<?php echo $this->options->themePrimary ? $this->options->themePrimary : $this->options->themePrimary . 'blue-grey'; ?> mdui-theme-accent-<?php echo $this->options->accentPrimary ? $this->options->accentPrimary : $this->options->accentPrimary . 'indigo'; ?> mdui-loaded" id="top">
     <div class="app">
         <header class="appbar mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
             <div class="mdui-toolbar mdui-color-theme">
