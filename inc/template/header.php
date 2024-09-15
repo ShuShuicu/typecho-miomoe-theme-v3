@@ -32,7 +32,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="app">
         <header class="appbar mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
             <div class="mdui-toolbar mdui-color-theme">
-                <a href="<?php $this->siteUrl() ?>?random=true" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"  mdui-tooltip="{content: '随机文章'}">
+                <a href="<?php $this->options->siteUrl(); ?>?random=true" class="mdui-btn mdui-btn-icon mdui-ripple mdui-ripple-white"  mdui-tooltip="{content: '随机文章'}">
                     <i class="mdui-icon material-icons">book</i>
                 </a>
                 <a href="<?php $this->options->siteUrl(); ?>" class="mdui-typo-headline mdui-hidden-xs"><?php $this->options->title(); ?></a>
