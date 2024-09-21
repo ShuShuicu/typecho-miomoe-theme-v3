@@ -28,7 +28,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="mdui-divider"></div>
     </div>
         <div class="mdui-card-content post-container" id="友情链接" style="padding-left:4%;padding-right:4%;">
-            <?php $this->content(); ?>
+            <?php echo $this->options->linksContent; ?>
         </div>
         <div class="mdui-card-content post-container" id="申请友链" style="padding-left:4%;padding-right:4%;">
             <?php require_once 'links-comments.php'; ?>

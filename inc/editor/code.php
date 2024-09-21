@@ -39,37 +39,10 @@ function parse_button_shortcode($content) {
     };
     return preg_replace_callback($pattern, $callback, $content);
 }
-// 友情链接列表
-function parse_list_shortcode($content) {
-    $pattern = '/\[list link="(.+?)" img="(.+?)" title="(.+?)"\](.+?)\[\/list\]/';
-    $callback = function ($matches) {
-        $link = htmlspecialchars($matches[1], ENT_QUOTES, 'UTF-8');
-        $img = htmlspecialchars($matches[2], ENT_QUOTES, 'UTF-8');
-        $title = htmlspecialchars($matches[3], ENT_QUOTES, 'UTF-8');
-        $text = htmlspecialchars($matches[4], ENT_QUOTES, 'UTF-8');
-        return '<ul class="mdui-list">
-                    <a target="_blank" href="' . $link . '">
-                        <li class="mdui-list-item mdui-ripple">
-                            <div class="mdui-list-item-avatar">
-                                <img src="' . $img . '" />
-                            </div>
-                            <div class="mdui-list-item-content">
-                                <div class="mdui-list-item-title">' . $title . '</div>
-                                <div class="mdui-list-item-text mdui-list-item-one-line">
-                                    <span class="mdui-text-color-theme-text">' . $text . '</span>
-                                </div>
-                            </div>
-                        </li>
-                    </a>
-                </ul>';
-    };
-    return preg_replace_callback($pattern, $callback, $content);
-}
 
 function add_shortcode_support($content) {
     $content = htmlspecialchars_decode($content); // 先解码HTML实体
     $content = parse_button_shortcode($content);
-    $content = parse_list_shortcode($content);
     return $content;
 }
 // 为文章内容和摘要添加过滤器

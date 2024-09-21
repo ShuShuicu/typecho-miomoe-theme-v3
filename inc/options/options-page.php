@@ -85,7 +85,13 @@ setTimeout(function() {
 </div>
 
 </div>
-<div class="mdui-card-content" id="主题设置" style="padding-left:4%;padding-right:4%;">
+
+<div class="mdui-typo mdui-card-content" id="主题设置" style="padding-left:4%;padding-right:4%;">
 <?php 
-require 'options-code.php'; 
+    require_once 'code/backups.php'; 
+    require_once 'code/opcache.php'; 
+    require_once 'code/basics.php'; 
+    require_once 'code/sidebar.php'; 
+    require_once 'code/other.php'; 
+    require_once 'code/style-code.php'; 
 }
