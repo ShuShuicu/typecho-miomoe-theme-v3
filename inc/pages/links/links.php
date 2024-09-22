@@ -1,6 +1,5 @@
 <?php
 /**
- * 
  * 主题友情链接页面
  * @package MioV3
  * @author 鼠子(ShuShuicu)
