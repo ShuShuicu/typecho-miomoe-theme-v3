@@ -46,6 +46,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <span class="mdui-chip-title"><?php $this->date(); ?></span>
                 </div>
                 <div class=" mdui-ripple mdui-float-right">
+                    <?php $this->need('inc/reward.php'); ?>
                     <?php $this->need('inc/share.php'); ?>
                 </div>
             </div>
