@@ -9,7 +9,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
 <div id="comments">
     <?php $this->comments()->to($comments); ?>
-    <?php if ($comments->have()): ?>
+    
 
 <div class="mdui-m-y-2">
     <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
@@ -29,5 +29,4 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </div>
     </div>
 </div>
-<?php endif; ?>
 </div>

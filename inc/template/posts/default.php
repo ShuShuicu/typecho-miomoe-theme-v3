@@ -59,9 +59,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
-<?php if ($this->comments()->have() || $this->allow('comment')): ?>
-    <?php $this->need('comments.php'); ?>
-<?php endif; ?>
+<?php $this->need('comments.php'); ?>
 </div>
 <?php 
 $this->need('sidebar.php'); 

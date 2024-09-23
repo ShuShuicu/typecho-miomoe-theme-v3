@@ -7,5 +7,7 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
+<?php if ($comments->have()): ?>
 <?php $comments->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
 <?php $comments->listComments(); ?>
+<?php endif; ?>
