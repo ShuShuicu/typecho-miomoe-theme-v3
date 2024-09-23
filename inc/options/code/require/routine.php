@@ -181,9 +181,18 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         NULL, 
         NULL, 
         _t('侧边介绍'), 
-        _t('请输入侧边介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font><hr>')
+        _t('请输入侧边介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font>')
     );
     $form->addInput($sidebarInfo);
+    // 侧边自定义代码
+    $sidebarStyleCode = new Typecho_Widget_Helper_Form_Element_Textarea(
+        'sidebarStyleCode', 
+        NULL, 
+        NULL, 
+        _t('侧边自定义HTML'), 
+        _t('请输入侧边底部自定义<font color="red">HTML代码。</font>，一般为说明介绍播放器友情链接等，留空则不显示<<hr>')
+    );
+    $form->addInput($sidebarStyleCode);
 
     
     // 备案号
