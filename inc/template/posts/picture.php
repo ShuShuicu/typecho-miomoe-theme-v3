@@ -76,5 +76,5 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php endif; ?>
 </div>
 <?php 
-$this->need('inc/sidebar/sidebar.php'); 
+$this->need('sidebar.php'); 
 ?>
