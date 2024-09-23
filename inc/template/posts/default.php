@@ -11,7 +11,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="mdui-typo mdui-center">
         <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
             <div class="mdui-card-media mdui-card-content">
-                <div class="mdui-card-primary-title mdui-text-truncate"><?php $this->title() ?></div>
+                <div class="mdui-card-primary-title"><?php $this->title() ?></div>
             </div>
             <div class="mdui-divider"></div>
             <div class="mdui-card-actions">

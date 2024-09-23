@@ -8,6 +8,6 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 $this->need('header.php'); 
-$this->need('inc/pages/links/links.php'); 
+$this->need('inc/template/pages/links/links.php'); 
 $this->need('footer.php');
 ?>

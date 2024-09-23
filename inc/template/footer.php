@@ -29,7 +29,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 </div>
 </div>
         </div>
-        <div class="mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
+        <div class="mdui-hidden-sm-down mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
             <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
                 <i class="mdui-icon material-icons">add</i>
                 <i class="mdui-icon mdui-fab-opened material-icons">cancel</i>
