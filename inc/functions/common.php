@@ -6,7 +6,13 @@
  * @link https://blog.miomoe.cn/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
-
+/**
+ * 更换Gravatar源
+ * Blog.MioMoe.Cn
+ */
+$avatarCdn = Helper::options()->avatarCdn; 
+// 定义常量
+define('__TYPECHO_GRAVATAR_PREFIX__', $avatarCdn); 
 /**
  * 加载时间
  * Blog.MioMoe.Cn

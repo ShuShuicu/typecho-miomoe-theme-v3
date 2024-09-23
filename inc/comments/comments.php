@@ -7,6 +7,10 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
+<div id="comments">
+    <?php $this->comments()->to($comments); ?>
+    <?php if ($comments->have()): ?>
+
 <div class="mdui-m-y-2">
     <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
         <div class="mdui-card-content">
@@ -24,4 +28,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <div id="发表评论"><?php require_once 'form.php'; ?></div>
         </div>
     </div>
+</div>
+<?php endif; ?>
 </div>

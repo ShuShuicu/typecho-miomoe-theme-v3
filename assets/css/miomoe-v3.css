@@ -3,16 +3,87 @@
  * Copyright 2024 ShuShuicu
  * Licensed under MIT
 */
+a {
+    color: unset;
+    text-decoration: unset;
+}
 .mdui-typo img {
     border-radius: 8px;
-}
-.mdui-typo .post-container {
-    font-size: 17px;
 }
 .thumbnail-post {
     height: 200px;
     background-position: center center !important;
     background-size: cover !important;
 }
+.miov3-icon {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 25px;
+  height: 25px;
+  color: transparent;
+  cursor: pointer;
+  -moz-user-select: none;
+  -o-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 3px
+}
 /**侧边**/
 ::-webkit-scrollbar{width:10px;height:0px}::-webkit-scrollbar-thumb{background-color:#12b7f5;background-image:-webkit-linear-gradient(45deg,rgba(255,93,143,1) 25%,transparent 25%,transparent 50%,rgba(255,93,143,1) 50%,rgba(255,93,143,1) 75%,transparent 75%,transparent)}::-webkit-scrollbar-track{-webkit-box-shadow:inset 0 0 5px rgba(0,0,0,0.2);background:#f6f6f6}
+
+
+/* ------------------
+ * Comment list
+ * --------------- */
+ #comments {
+    padding-top: 15px;
+  }
+  .comment-list, .comment-list ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .comment-list li {
+    padding: 14px;
+    margin-top: 10px;
+    border: 1px solid #eeeeee;
+    border-radius: 8px;
+  }
+  .comment-list li .comment-reply {
+    text-align: right;
+    font-size: .92857em;
+  }
+
+
+  .comment-author .avatar {
+    float: left;
+    margin-right: 10px;
+    border-radius: 8px;
+  }
+  .comment-author cite {
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  /* Comment reply */
+  .comment-list .respond {
+    margin-top: 15px;
+    border-top: 1px solid #EEE;
+  }
+  .respond .cancel-comment-reply {
+    float: right;
+    margin-top: 15px;
+    font-size: .92857em;
+  }
+  #comment-form label {
+    display: block;
+    margin-bottom: .5em;
+    font-weight: bold;
+  }
+  #comment-form .required:after {
+    content: " *";
+    color: #C00;
+  }

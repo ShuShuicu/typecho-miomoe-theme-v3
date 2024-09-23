@@ -6,9 +6,11 @@
  * @link https://blog.miomoe.cn/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
-//判断 PHP 版本是否达到要求
-if (substr(PHP_VERSION, 0, 3) < '7.3') {
-    echo '<h2>PHP版本必须 >= 7.3，否则搜索页面出错。</h2>';
+// 判断 PHP 版本是否达到要求
+if (version_compare(PHP_VERSION, '7.3', '<')) {
+    echo '<title>人品问题</title>'; 
+    echo '<h2>PHP版本大于7.3 · 当前版本' . phpversion() . '</h2>'; 
+    echo '<b>请升级您的PHP版本</b>或到usr/themes目录下移除主题;<br><b>切记升级版本后重启一下主题，</b>否则默认设置字段可能失效或出现排版错误等问题。';
     die();
 }
 // 引入核心文件

@@ -56,8 +56,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="mdui-divider"></div>
             <div class="mdui-chip" mdui-dialog-cancel>
             <span class="mdui-chip-title">
-                <i class="mdui-icon material-icons">highlight_off</i>
-                <a style="color: inherit;"> 关闭 </a>
+                <i class="mdui-icon material-icons">highlight_off</i><b> 关闭 </b>
             </span>
         </div>
         </div>

@@ -21,8 +21,20 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         _t('请选择静态资源CDN加速节点<br><font color="red">推荐白山云&JsdMirror</font>，如果切换CDN后有问题请切换为本地。') 
     );   
     $form->addInput($assetsCdn);
-    
-    
+    // Avatar
+    $avatarCdn = new Typecho_Widget_Helper_Form_Element_Select(  
+        'avatarCdn',  
+        array(        
+            'https://cravatar.cn/avatar/' => _t('CrAvatar'), 
+            'https://weavatar.com/avatar/'=> _t('WeAvatar'), 
+            'http://www.gravatar.com/avatar/'=> _t('GrAvatar'),
+            'https://gravatar.shushu.icu/avatar/'=> _t('GrAvatar(代理节点)'), 
+        ),  
+        'https://cravatar.cn/avatar/',          
+        _t('Avatar'),   
+        _t('请选择Avatar源，用于评论头像展示。') 
+    );   
+    $form->addInput($avatarCdn);
     // 色调
     $themePrimary = new Typecho_Widget_Helper_Form_Element_Select(  
         'themePrimary',  
@@ -106,10 +118,29 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         NULL, 
         '由 MioV3 主题强力驱动', 
         _t('副标题'), 
-        _t('输入一段描述，将会显示在网站首页 title 后方，留空不显示。<hr>')
+        _t('输入一段描述，将会显示在网站首页 title 后方，留空不显示。')
     );
     $form->addInput($subTitle);
 
+    // 打赏
+    // 微信
+    $rewardWeChatPay = new Typecho_Widget_Helper_Form_Element_Text(
+        'rewardWeChatPay',
+        NULL,
+        NULL,
+        _t('微信打赏码'),
+        _t('请填入微信打赏码链接。')
+    );
+    $form->addInput($rewardWeChatPay);
+    // 支付宝
+    $rewardAliPay = new Typecho_Widget_Helper_Form_Element_Text(
+        'rewardAliPay',
+        NULL,
+        NULL,
+        _t('支付宝收款码'),
+        _t('请填入支付宝收款码链接。<hr>')
+    );
+    $form->addInput($rewardAliPay);
     
     // 侧边
     $tabCategorie = new Typecho_Widget_Helper_Form_Element_Select(  

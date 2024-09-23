@@ -5,7 +5,7 @@ console.log("\n%c %s %c %s %c %s\n", "color: #fff; background: #34495e; padding:
 document.addEventListener('DOMContentLoaded', function() {
     // 初始化ViewImage
     if (window.ViewImage) {
-        ViewImage.init('.mdui-card-content img, .post-container img'); // 修改选择器确保匹配图片
+        ViewImage.init('.post-container img'); 
     }
 
     // 为所有图片添加类名
@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function() {
         images[i].classList.add('mdui-ripple', 'mdui-img-fluid', 'mdui-img-rounded');
     }
 });
-
 
 // 视频类名 
 var images = document.getElementsByTagName('video');

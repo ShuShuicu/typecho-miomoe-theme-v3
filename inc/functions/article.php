@@ -101,26 +101,3 @@ if($archive->request->isGet() && $archive->request->get('random')){
     header('Location: '.randomPost('return'));exit;
 }
 }
-
-/**
-* 显示上一篇
-*/
-function thePrev($widget, $default = NULL)
-{
-$db = Typecho_Db::get();
-$sql = $db->select()->from('table.contents')
-->where('table.contents.created < ?', $widget->created)
-->where('table.contents.status = ?', 'publish')
-->where('table.contents.type = ?', $widget->type)
-->where('table.contents.password IS NULL')
-->order('table.contents.created', Typecho_Db::SORT_DESC)
-->limit(1);
-$content = $db->fetchRow($sql); 
-if ($content) {
-$content = $widget->filter($content);
-$link = '<a href="' . $content['permalink'] . '" title="' . $content['title'] . '">上一篇</a>';
-echo $link;
-} else {
-echo $default;
-}
-}
