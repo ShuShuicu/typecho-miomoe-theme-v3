@@ -7,28 +7,7 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
-<div class="mdui-col-xs-12">
-<div class="mdui-m-y-2 mdui-typo mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px;">
-    <footer style="display:flex;" id="bottom">
-        <div class="mdui-typo-body-1-opacity mdui-text-left">
-            Powered by <a href="http://typecho.org" target="_blank" rel="external nofollow noopener">Typecho</a>
-            <br>© Copyright <a href="<?php $this->options->siteUrl(); ?>"><?php $this->options->title(); ?></a>
-        </div>
-        <div style="flex-grow:1">
-        </div>
-        <div class="mdui-typo-body-1-opacity mdui-text-right">
-            页面加载时间<?php echo timer_stop();?>
-            <br><?php if ($this->options->icpCode) { echo '<a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener">' . $this->options->icpCode . '</a>'; } else { get_themeCopyright(); } ?>
-        </div>
-        <!--
-            尊重开源环境，请勿删除版权。
-            此主题基于MDUI制作，由鼠子(ShuShuicu)开发；
-            可前往主题作者博客：https://blog.miomoe.cn/免费下载。
-        -->
-    </footer>
-</div>
-</div>
-        </div>
+    </div>
         <div class="mdui-hidden-sm-down mdui-fab-wrapper" mdui-fab="{trigger: 'hover'}">
             <button class="mdui-fab mdui-ripple mdui-color-theme-accent">
                 <i class="mdui-icon material-icons">add</i>
@@ -59,6 +38,48 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
+<footer id="bottom">
+	<div class="mdui-card">
+		<div class="mdui-container">
+			<div class="mdui-row mdui-p-y-4">
+				<div class="mdui-typo mdui-col-xs-4 mdui-col-md-3 mdui-col-offset-md-1">
+					<div class="mdui-float-left">
+                        <div>Powered by <a href="http://typecho.org" target="_blank">Typecho</a></div>
+                        <div>页面加载时间<?php echo timer_stop();?></div>
+					</div>
+				</div>
+				<div class="mdui-typo mdui-col-xs-4 mdui-col-md-4">
+					<div class="mdui-text-center">
+                        <div>© <?php echo date("Y"); ?> Copyright <a href="<?php $this->options->siteUrl(); ?>"><b><?php $this->options->title(); ?></b></a> 版权所有</div>
+                        <div><?php if ($this->options->icpCode) { echo '<a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener">' . $this->options->icpCode . '</a>'; } else { echo '正在努力备案中...'; } ?></div>
+					</div>
+				</div>
+				<div class="mdui-col-xs-4 mdui-col-md-3">
+					<div class="mdui-float-right">
+                        <div>
+                            <a href="<?php echo $this->options->bilibiliUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
+                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'B站', position: 'top'}">
+                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/bilibili.svg'); ?>);cursor: default"></i>
+                                </button>
+                            </a>
+                            <a href="<?php echo $this->options->qqUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
+                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'QQ', position: 'top'}">
+                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/qq-1.svg'); ?>);cursor: default"></i>
+                                </button>
+                            </a>
+                            <a href="mailto:<?php echo $this->options->Email; ?>" class="mdui-ripple mdui-tab-active">
+                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'Mail', position: 'top'}">
+                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/mail.svg'); ?>);cursor: default"></i>
+                                </button>
+                            </a>
+                        </div>
+                        <div class="mdui-typo"><?php echo get_themeCopyright(); ?></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
 <script src="<?php echo get_assetUrl('assets/js/miomoe-v3.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/mdui.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/view-image.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>

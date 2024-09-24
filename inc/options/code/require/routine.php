@@ -12,9 +12,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         'assetsCdn',  
         array(        
             'default' => _t('本地'), 
-            'https://ss.bscstorage.com/wpteam-shushuicu/'=> _t('白山云'), 
-            'https://cdn.jsdmirror.com/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsdMirror'),
-            'https://cdn.jsdelivr.net/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr'), 
+            'https://ss.bscstorage.com/wpteam-shushuicu/'=> _t('⭐️白山云⭐️'), 
+            'https://cdn.jsdmirror.com/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('⭐️JsdMirror⭐️'), 
+            'https://cdn.jsdelivr.net/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(官方源'), 
+            'https://jsdelivr.shushu.icu/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(鼠子源'), 
+            'https://jsd.nmmsl.top/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(荣6源'), 
+            'https://jsd.vxo.im/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(Yize源'), 
         ),  
         'default',          
         _t('CDN'),   
@@ -60,7 +63,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             'deep-purple'=> _t('深紫色'),
             'red'=> _t('红色'),
         ),  
-        'deep-orang',          
+        'red',          
         _t('副(强)色调'),   
         _t('请选择主题的副(强)色调。') 
     );   
@@ -96,21 +99,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $faviconUrl = new Typecho_Widget_Helper_Form_Element_Text(
         'faviconUrl',
         NULL,
-        NULL,
+        '' . THEME_URL . '/assets/images/favicon.ico',
         _t('网站图标'),
         _t('请填入网站图标，没有则显示主题默认图标。')
     );
     $form->addInput($faviconUrl);
-
-    // 作者头像
-    $avatarUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'avatarUrl',
-        NULL,
-        NULL,
-        _t('作者头像'),
-        _t('请填入作者头像链接，没有则显示神鹰黑手哥。')
-    );
-    $form->addInput($avatarUrl);
 
     // 副标题 
     $subTitle = new Typecho_Widget_Helper_Form_Element_Text(
@@ -122,12 +115,50 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     );
     $form->addInput($subTitle);
 
+    // 作者头像
+    $avatarUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'avatarUrl',
+        NULL,
+        '' . THEME_URL . '/assets/images/avatar.jpg',
+        _t('作者头像'),
+        _t('请填入作者头像链接，没有则显示神鹰黑手哥。')
+    );
+    $form->addInput($avatarUrl);
+
+    // QQ
+    $qqUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'qqUrl', 
+        NULL, 
+        'https://wpa.qq.com/msgrd?v=3&uin=QQ号码&site=qqq&menu=yes', 
+        _t('QQ链接'), 
+        _t('输入QQ加好友或加群链接，将会在网站底部显示的QQ图标点击跳转。')
+    );
+    $form->addInput($qqUrl);
+    // QQ
+    $Email = new Typecho_Widget_Helper_Form_Element_Text(
+        'Email', 
+        NULL, 
+        '123456789@qq.com', 
+        _t('E-Mail'), 
+        _t('输入收件邮箱，将会在网站底部显示的EMail图标点击发邮件。')
+    );
+    $form->addInput($Email);
+    // 哔哩哔哩 
+    $bilibiliUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'bilibiliUrl', 
+        NULL, 
+        'https://space.bilibili.com/435502585', 
+        _t('B站空间'), 
+        _t('输入B站个人空间链接，将会在网站底部显示的B站图标点击跳转。')
+    );
+    $form->addInput($bilibiliUrl);
+
     // 打赏
     // 微信
     $rewardWeChatPay = new Typecho_Widget_Helper_Form_Element_Text(
         'rewardWeChatPay',
         NULL,
-        NULL,
+        '' . THEME_URL . '/assets/images/wechat-pay.jpg',
         _t('微信打赏码'),
         _t('请填入微信打赏码链接。')
     );
@@ -136,7 +167,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $rewardAliPay = new Typecho_Widget_Helper_Form_Element_Text(
         'rewardAliPay',
         NULL,
-        NULL,
+        '' . THEME_URL . '/assets/images/noscreen.png',
         _t('支付宝收款码'),
         _t('请填入支付宝收款码链接。<hr>')
     );
@@ -183,7 +214,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $sidebarTitle = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarTitle', 
         NULL, 
-        NULL,
+        '' . Helper::options()->title . '', 
         _t('侧边标题'), 
         _t('请输入侧边标题，一般为网站或作者名称，留空则显示站点标题。')
     );
@@ -192,7 +223,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $sidebarSubTitle = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarSubTitle', 
         NULL, 
-        NULL,
+        '' . Helper::options()->title . '', 
         _t('侧边副标题'), 
         _t('请输入侧边副标题，一般为网站关键词或作者说明，留空则显示站点副标题。')
     );
@@ -201,7 +232,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $sidebarImg = new Typecho_Widget_Helper_Form_Element_Text(
         'sidebarImg', 
         NULL, 
-        NULL, 
+        '' . THEME_URL . '/assets/images/favicon.ico',
         _t('侧边图片'), 
         _t('请输入侧边图片链接，一般为网站favicon或作者头像，留空则显示神鹰黑手哥。')
     );
@@ -210,7 +241,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     $sidebarInfo = new Typecho_Widget_Helper_Form_Element_Textarea(
         'sidebarInfo', 
         NULL, 
-        NULL, 
+        '' . Helper::options()->description . '', 
         _t('侧边介绍'), 
         _t('请输入侧边介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font>')
     );

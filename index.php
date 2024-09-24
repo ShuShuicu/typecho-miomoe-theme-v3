@@ -3,7 +3,7 @@
  * 这是MioV3主题(原MioMoeV3)的第一个重写版本(第三个重构版)。
  * @package MioV3
  * @author 鼠子(ShuShuicu)
- * @version 1.0.7
+ * @version 1.0.8
  * @link https://blog.miomoe.cn/
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 

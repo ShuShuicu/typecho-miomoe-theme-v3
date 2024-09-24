@@ -4,6 +4,10 @@
 有细心的朋友可能发现了主题的screenshot.png也就是主题的封面预览图是GBC(GIRLS BAND CRY)，V2版是孤独摇滚，V1版是轻音少女，大家可以猜猜V4会不会是MyGO呢~
 
 ### 更新日志
+#### 1.0.8
+- 全新底部样式
+- 优化设置默认值
+
 #### 1.0.7
 - 优化部分细节
 - 新增打赏功能
@@ -23,6 +27,7 @@
 - 新增 JsDelivr & JsdMirror静态资源加速
 
 > 同步GitHub Master分支下的assets文件
+
 > JsdMirror是一个免费面向中国境内外的高速jsdelivr镜像站。
 
 #### 1.0.3
