@@ -7,6 +7,85 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 
+    // favicon
+    $faviconUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'faviconUrl',
+        NULL,
+        '' . THEME_URL . '/assets/images/favicon.ico',
+        _t('网站图标'),
+        _t('请填入网站图标，没有则显示主题默认图标。')
+    );
+    $form->addInput($faviconUrl);
+
+    // 副标题 
+    $subTitle = new Typecho_Widget_Helper_Form_Element_Text(
+        'subTitle', 
+        NULL, 
+        '由 MioV3 主题强力驱动', 
+        _t('副标题'), 
+        _t('输入一段描述，将会显示在网站首页 title 后方，留空不显示。')
+    );
+    $form->addInput($subTitle);
+
+    // 作者头像
+    $avatarUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'avatarUrl',
+        NULL,
+        '' . THEME_URL . '/assets/images/avatar.jpg',
+        _t('作者头像'),
+        _t('请填入作者头像链接，没有则显示神鹰黑手哥。')
+    );
+    $form->addInput($avatarUrl);
+
+    // QQ
+    $qqUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'qqUrl', 
+        NULL, 
+        'https://wpa.qq.com/msgrd?v=3&uin=QQ号码&site=qqq&menu=yes', 
+        _t('QQ链接'), 
+        _t('输入QQ加好友或加群链接，将会在网站底部显示的QQ图标点击跳转。')
+    );
+    $form->addInput($qqUrl);
+    // QQ
+    $Email = new Typecho_Widget_Helper_Form_Element_Text(
+        'Email', 
+        NULL, 
+        '123456789@qq.com', 
+        _t('E-Mail'), 
+        _t('输入收件邮箱，将会在网站底部显示的EMail图标点击发邮件。')
+    );
+    $form->addInput($Email);
+    // 哔哩哔哩 
+    $bilibiliUrl = new Typecho_Widget_Helper_Form_Element_Text(
+        'bilibiliUrl', 
+        NULL, 
+        'https://space.bilibili.com/435502585', 
+        _t('B站空间'), 
+        _t('输入B站个人空间链接，将会在网站底部显示的B站图标点击跳转。')
+    );
+    $form->addInput($bilibiliUrl);
+
+    // 打赏
+    // 微信
+    $rewardPayImg = new Typecho_Widget_Helper_Form_Element_Text(
+        'rewardPayImg',
+        NULL,
+        '' . THEME_URL . '/assets/images/wechat-pay.jpg',
+        _t('收款码'),
+        _t('请填入收款打赏码链接。')
+    );
+    $form->addInput($rewardPayImg);
+
+    // 备案号
+    $icpCode = new Typecho_Widget_Helper_Form_Element_Text(
+        'icpCode', 
+        NULL, 
+        NULL,
+        _t('ICP备案号'), 
+        _t('请输入网站ICP备案号，如果没有请留空。<hr>')
+    );
+    $form->addInput($icpCode);
+
     // CDN
     $assetsCdn = new Typecho_Widget_Helper_Form_Element_Select(  
         'assetsCdn',  
@@ -113,74 +192,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     );   
     $form->addInput($postStyle);
 
-    // favicon
-    $faviconUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'faviconUrl',
-        NULL,
-        '' . THEME_URL . '/assets/images/favicon.ico',
-        _t('网站图标'),
-        _t('请填入网站图标，没有则显示主题默认图标。')
-    );
-    $form->addInput($faviconUrl);
-
-    // 副标题 
-    $subTitle = new Typecho_Widget_Helper_Form_Element_Text(
-        'subTitle', 
+    // Drive目录
+    $driveDir = new Typecho_Widget_Helper_Form_Element_Text(
+        'driveDir', 
         NULL, 
-        '由 MioV3 主题强力驱动', 
-        _t('副标题'), 
-        _t('输入一段描述，将会显示在网站首页 title 后方，留空不显示。')
+        'files', 
+        _t('MioDrive'), 
+        _t('Drive功能文件目录，默认为 主题目录/inc/drive/ 下的 files 文件夹。<hr>')
     );
-    $form->addInput($subTitle);
-
-    // 作者头像
-    $avatarUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'avatarUrl',
-        NULL,
-        '' . THEME_URL . '/assets/images/avatar.jpg',
-        _t('作者头像'),
-        _t('请填入作者头像链接，没有则显示神鹰黑手哥。')
-    );
-    $form->addInput($avatarUrl);
-
-    // QQ
-    $qqUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'qqUrl', 
-        NULL, 
-        'https://wpa.qq.com/msgrd?v=3&uin=QQ号码&site=qqq&menu=yes', 
-        _t('QQ链接'), 
-        _t('输入QQ加好友或加群链接，将会在网站底部显示的QQ图标点击跳转。')
-    );
-    $form->addInput($qqUrl);
-    // QQ
-    $Email = new Typecho_Widget_Helper_Form_Element_Text(
-        'Email', 
-        NULL, 
-        '123456789@qq.com', 
-        _t('E-Mail'), 
-        _t('输入收件邮箱，将会在网站底部显示的EMail图标点击发邮件。')
-    );
-    $form->addInput($Email);
-    // 哔哩哔哩 
-    $bilibiliUrl = new Typecho_Widget_Helper_Form_Element_Text(
-        'bilibiliUrl', 
-        NULL, 
-        'https://space.bilibili.com/435502585', 
-        _t('B站空间'), 
-        _t('输入B站个人空间链接，将会在网站底部显示的B站图标点击跳转。')
-    );
-    $form->addInput($bilibiliUrl);
-
-    // 打赏
-    // 微信
-    $rewardPayImg = new Typecho_Widget_Helper_Form_Element_Text(
-        'rewardPayImg',
-        NULL,
-        '' . THEME_URL . '/assets/images/wechat-pay.jpg',
-        _t('收款码'),
-        _t('请填入收款打赏码链接。')
-    );
-    $form->addInput($rewardPayImg);
+    $form->addInput($driveDir);
     
     // 侧边
     $tabCategorie = new Typecho_Widget_Helper_Form_Element_Select(  
@@ -264,17 +284,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         _t('请输入侧边底部自定义<font color="red">HTML代码。</font>，一般为说明介绍播放器友情链接等，留空则不显示<<hr>')
     );
     $form->addInput($sidebarStyleCode);
-
-    
-    // 备案号
-    $icpCode = new Typecho_Widget_Helper_Form_Element_Text(
-        'icpCode', 
-        NULL, 
-        NULL,
-        _t('ICP备案号'), 
-        _t('请输入网站ICP备案号，如果没有请留空。')
-    );
-    $form->addInput($icpCode);
 
     // 版权声明
     $postCopyright = new Typecho_Widget_Helper_Form_Element_Textarea(

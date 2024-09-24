@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * Mio友情链接
+ * MioDrive
  *
  * @package custom
  * @author 鼠子(ShuShuicu)
@@ -9,6 +9,5 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 $this->need('header.php'); 
-$this->need('inc/template/pages/links/links.php'); 
+$this->need('inc/drive/drive.php'); 
 $this->need('footer.php');
-?>

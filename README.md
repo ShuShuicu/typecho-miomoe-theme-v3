@@ -4,6 +4,13 @@
 有细心的朋友可能发现了主题的screenshot.png也就是主题的封面预览图是GBC(GIRLS BAND CRY)，V2版是孤独摇滚，V1版是轻音少女，大家可以猜猜V4会不会是MyGO呢~
 
 ### 更新日志
+#### 1.1.2
+- 更新图标
+- 新增文章字数
+- 新增 MioDrive 功能
+
+> 就是将 MioDrive 文件下载系统移植进来了，原版：https://gitee.com/ShuShuicu/MioDrive
+
 #### 1.1.1
 - 优化Pjax
 - 优化部分CSS

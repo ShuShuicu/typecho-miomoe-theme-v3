@@ -28,13 +28,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
             <div class="mdui-divider"></div>
             <div class="mdui-card-actions">
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme">
-                        <img src="<?php echo $this->options->avatarUrl ? $this->options->avatarUrl : $this->options->themeUrl . '/assets/images/avatar.jpg'; ?>" class="mdui-img-fluid" /></span>
-                    <span class="mdui-chip-title"><?php $this->author(); ?></span>
-                </div>
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">apps</i></span>
+            <div class="mdui-chip">
+                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">folder</i></span>
                     <span class="mdui-chip-title"><?php $this->category(',', true, '暂无分类'); ?></span>
                 </div>
                 <div class="mdui-chip">
@@ -42,11 +37,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <span class="mdui-chip-title"><?php $this->tags(',', true, '暂无标签'); ?></span>
                 </div>
                 <div class="mdui-chip">
+                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">bookmark</i></span>
+                    <span class="mdui-chip-title">共<?php art_count($this->cid); ?>字 </span>
+                </div>
+                <div class="mdui-chip">
                     <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">timer</i></span>
                     <span class="mdui-chip-title"><?php $this->date(); ?></span>
                 </div>
-                <div class="mdui-float-right">
-                    <?php $this->need('inc/reward.php'); ?>
+                <div class="mdui-float-right" data-pjax="false">
                     <?php $this->need('inc/share.php'); ?>
                 </div>
             </div>
@@ -67,6 +65,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                             版权声明：
                         </strong>
                         <?php echo $this->options->postCopyright; ?>
+                        <div class="mdui-float-right" data-pjax="false">
+                            <?php $this->need('inc/reward.php'); ?>
+                        </div>
                     </div>
                 </div>
             </div>

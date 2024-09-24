@@ -18,7 +18,7 @@ require_once 'functions/common.php';
 require_once 'functions/get.php'; 
 require_once 'functions/article.php'; 
 // 编辑器
-require_once 'editor/code.php'; 
-require_once 'editor/field.php'; 
+require_once 'functions/editor/code.php'; 
+require_once 'functions/editor/field.php'; 
 // 设置页面
 require_once 'options/options-page.php'; 

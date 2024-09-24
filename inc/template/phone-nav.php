@@ -28,7 +28,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="mdui-list" mdui-collapse="{accordion: true}">
                 <div class="mdui-collapse-item mdui-collapse-item-<?php $this->options->tabCategorie(); ?>">
                     <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
-                        <i class="mdui-list-item-icon mdui-icon material-icons">apps</i>
+                        <i class="mdui-list-item-icon mdui-icon material-icons">folder</i>
                         <div class="mdui-list-item-content">文章分类</div>
                         <i class="mdui-collapse-item-arrow mdui-icon material-icons">keyboard_arrow_up</i>
                     </div>

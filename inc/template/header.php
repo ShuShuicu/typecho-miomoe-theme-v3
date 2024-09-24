@@ -9,9 +9,20 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!--
+     __  __ _   __      ______    _______ _                           _ 
+    |  \/  (_)  \ \    / /___ \  |__   __| |                         | |
+    | \  / |_  __\ \  / /  __) |    | |  | |__   ___ _ __ ___   ___  | |
+    | |\/| | |/ _ \ \/ /  |__ <     | |  | '_ \ / _ \ '_ ` _ \ / _ \ | |
+    | |  | | | (_) \  /   ___) |    | |  | | | |  __/ | | | | |  __/ |_|
+    |_|  |_|_|\___/ \/   |____/     |_|  |_| |_|\___|_| |_| |_|\___| (_)
+                                                                        
+        Gitee：https://gitee.com/ShuShuicu/typecho-miomoe-theme-v3    
+        GitHub：https://github.com/ShuShuicu/typecho-miomoe-theme-v3  
+-->
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
-    <link rel="dns-prefetch" href="//apps.bdimg.com">
+    <link rel="dns-prefetch" href="//ss.bscstorage.com">
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title><?php $this->archiveTitle(array( 
