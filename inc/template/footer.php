@@ -91,6 +91,43 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="<?php echo get_assetUrl('assets/js/sweetalert2.all.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/code/prism.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/code/clipboard.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/js/nprogress.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/js/jquery-3.7.1.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script>
+    $(document).ready(function() {
+        // PJAX
+        $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
+            container: '#pjax-container',
+            fragment: '#pjax-container',
+            timeout: 3000
+        });
+
+        $(document).on('pjax:send', function() {
+            NProgress.start();
+        });
+
+        $(document).on('pjax:complete', function() {
+            NProgress.done();
+            mdui.Tooltip.init(); // 重新初始化工具提示
+            console.log('PJAX complete event triggered');
+
+            // 代码高亮
+            if (typeof Prism !== 'undefined') {
+                var pres = document.getElementsByTagName('pre');
+                for (var i = 0; i < pres.length; i++) {
+                    if (pres[i].getElementsByTagName('code').length > 0) {
+                        pres[i].className = 'line-numbers';
+                    }
+                }
+                Prism.highlightAll(true, null);
+            }
+        });
+
+        // 初始化工具提示
+        mdui.Tooltip.init();
+    });
+</script>
 <?php $this->options->jsStyleCode(); ?>
 </body>
 </html>
