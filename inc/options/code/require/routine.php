@@ -68,6 +68,24 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         _t('请选择主题的副(强)色调。') 
     );   
     $form->addInput($accentPrimary);
+
+    // 高亮代码
+    $CodePrettifyCSS = new Typecho_Widget_Helper_Form_Element_Select(  
+        'CodePrettifyCSS',  
+        array(    
+            'coy'=> _t('Coy'),
+            'dark'=> _t('Dark'),    
+            'GrayMac' => _t('⭐️Mac(灰)⭐️'), 
+            'BlackMac'=> _t('⭐️Mac(黑)⭐️'), 
+            'WhiteMac'=> _t('⭐️Mac(白)⭐️'), 
+            'twilight'=> _t('Twilight'),
+            'tomorrow-night'=> _t('TomorrowNight'),
+        ),  
+        'GrayMac',          
+        _t('高亮代码'),   
+        _t('请选择文章高亮主题风格。') 
+    );   
+    $form->addInput($CodePrettifyCSS);
     
     // 列表调整 
     // 首页

@@ -39,6 +39,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         </div>
     </div>
 <footer id="bottom">
+    <div class="mdui-valign">
+        <img class="mdui-center" src="<?php $this->options->themeUrl('assets/images/end.png'); ?>"></img>
+    </div>
 	<div class="mdui-card">
 		<div class="mdui-container">
 			<div class="mdui-row mdui-p-y-4">
@@ -80,11 +83,35 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 		</div>
 	</div>
 </footer>
+<?php $this->footer(); ?>
 <script src="<?php echo get_assetUrl('assets/js/miomoe-v3.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/mdui.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/view-image.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/js/jquery-3.7.1.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/sweetalert2.all.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
-<?php $this->footer(); ?>
+<script src="<?php echo get_assetUrl('assets/code/prism.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script src="<?php echo get_assetUrl('assets/code/clipboard.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+<script>
+//pjax 刷新
+$(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
+    container: '#pjax-container',
+    fragment: '#pjax-container',
+    timeout: 3000
+}).on('pjax:send',
+function() {
+    NProgress.start();//加载动画效果开始
+
+}).on('pjax:complete',
+function() {
+NProgress.done();//加载动画效果结束
+imageeffct();//灯箱函数重载
+setupContents();//某个函数重载
+lue();//lue函数重载
+reHighlightCodeBlock();//代码高亮函数重载
+if ($('.ds-thread').length > 0) { if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread('.ds-thread'); else $.getScript("https://www.ihewro.com/duoshuo/embedhw4.min.js"); }
+});//多说模块重载
+</script>
 <?php $this->options->jsStyleCode(); ?>
 </body>
 </html>

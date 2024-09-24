@@ -32,7 +32,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">timer</i></span>
                     <span class="mdui-chip-title"><?php $this->date(); ?></span>
                 </div>
-                <div class="mdui-ripple mdui-float-right">
+                <div class="mdui-float-right">
                     <?php $this->need('inc/reward.php'); ?>
                     <?php $this->need('inc/share.php'); ?>
                 </div>

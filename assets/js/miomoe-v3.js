@@ -124,3 +124,12 @@ document.body.oncopy = function () {
         position: 'top',
     });
 };
+
+// 高亮代码
+(function(){
+    var pres = document.querySelectorAll('pre');
+    var lineNumberClassName = 'line-numbers';
+    pres.forEach(function (item, index) {
+        item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
+    });
+})();
