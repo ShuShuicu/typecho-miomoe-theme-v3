@@ -21,15 +21,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         'author'   => _t('「%s」发布的文章') 
 	), '', ' - '); ?><?php if ($this->_currentPage > 1) echo '「第' . $this->_currentPage . '页」 - '; ?><?php $this->options->title(); ?><?php if ($this->is('index') && !empty($this->options->subTitle)): ?> - <?php $this->options->subTitle(); ?><?php endif; ?></title>
     <?php $this->header(); ?>
+    <link href="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" rel="icon" />
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/miomoe-v3.css'); ?>?v=<?php echo get_ver(); ?>">
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/mdui.min.css'); ?>?v=<?php echo get_ver(); ?>">
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/sweetalert2.min.css'); ?>?v=<?php echo get_ver(); ?>">
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/code/styles/' . $this->options->CodePrettifyCSS . '.css'); ?>?v=<?php echo get_ver(); ?>">
-    <link href="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" rel="icon" />
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/nprogress.min.css'); ?>?v=<?php echo get_ver(); ?>">
+    <script src="<?php echo get_assetUrl('assets/js/nprogress.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
     <script src="<?php echo get_assetUrl('assets/js/jquery-3.7.1.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
     <script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <?php $this->options->cssStyleCode(); ?>
 </head>
 <script>
