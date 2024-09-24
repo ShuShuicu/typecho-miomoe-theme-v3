@@ -7,7 +7,7 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
-<div class="mdui-m-y-2 mdui-col-xl-9 mdui-col-lg-8 mdui-col-md-8 mdui-col-sm-12 mdui-col-xs-12">
+<div class="mdui-m-y-2 mdui-col-xl-9 mdui-col-lg-8 mdui-col-md-8 mdui-col-sm-12 mdui-col-xs-12" id="pjax-container">
     <div class="mdui-center">
         <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
             <div class="mdui-card-media mdui-card-content">

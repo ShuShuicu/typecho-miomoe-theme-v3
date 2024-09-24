@@ -38,80 +38,59 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
-<footer id="bottom">
-    <div class="mdui-valign">
-        <img class="mdui-center" src="<?php $this->options->themeUrl('assets/images/end.png'); ?>"></img>
-    </div>
-	<div class="mdui-card">
-		<div class="mdui-container">
-			<div class="mdui-row mdui-p-y-4">
-				<div class="mdui-typo mdui-col-xs-4 mdui-col-md-3 mdui-col-offset-md-1">
-					<div class="mdui-float-left">
-                        <div>Powered by <a href="http://typecho.org" target="_blank">Typecho</a></div>
-                        <div>页面加载时间<?php echo timer_stop();?></div>
-					</div>
-				</div>
-				<div class="mdui-typo mdui-col-xs-4 mdui-col-md-4">
-					<div class="mdui-text-center">
-                        <div>© <?php echo date("Y"); ?> Copyright <a href="<?php $this->options->siteUrl(); ?>"><b><?php $this->options->title(); ?></b></a> 版权所有</div>
-                        <div><?php if ($this->options->icpCode) { echo '<a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener">' . $this->options->icpCode . '</a>'; } else { echo '正在努力备案中...'; } ?></div>
-					</div>
-				</div>
-				<div class="mdui-col-xs-4 mdui-col-md-3">
-					<div class="mdui-float-right">
-                        <div>
-                            <a href="<?php echo $this->options->bilibiliUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
-                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'B站', position: 'top'}">
-                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/bilibili.svg'); ?>);cursor: default"></i>
-                                </button>
+    <footer id="bottom" style="display: block;unicode-bidi: isolate;">
+        <div class="mdui-valign">
+            <img class="mdui-center" src="<?php $this->options->themeUrl('assets/images/end.png'); ?>"></img>
+        </div>
+	    <div class="mdui-card">
+		    <div class="mdui-container">
+			    <div class="mdui-row mdui-p-y-4">
+				    <div class="mdui-typo mdui-col-xs-4 mdui-col-md-3 mdui-col-offset-md-1">
+					    <div class="mdui-float-left">
+                            <div>Powered by <a href="http://typecho.org" target="_blank">Typecho</a></div>
+                            <div>页面加载时间<?php echo timer_stop();?></div>
+					    </div>
+				    </div>
+				    <div class="mdui-typo mdui-col-xs-4 mdui-col-md-4">
+					    <div class="mdui-text-center">
+                            <div>© <?php echo date("Y"); ?> Copyright <a href="<?php $this->options->siteUrl(); ?>"><b><?php $this->options->title(); ?></b></a> 版权所有</div>
+                            <div><?php if ($this->options->icpCode) { echo '<a href="https://beian.miit.gov.cn/" target="_blank" rel="external nofollow noopener">' . $this->options->icpCode . '</a>'; } else { echo '正在努力备案中...'; } ?></div>
+					    </div>
+				    </div>
+				    <div class="mdui-col-xs-4 mdui-col-md-3">
+					    <div class="mdui-float-right">
+                            <div>
+                                <a href="<?php echo $this->options->bilibiliUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
+                                    <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'B站', position: 'top'}">
+                                        <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/bilibili.svg'); ?>);cursor: default"></i>
+                                    </button>
+                                </a>
+                                <a href="<?php echo $this->options->qqUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
+                                    <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'QQ', position: 'top'}">
+                                        <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/qq-1.svg'); ?>);cursor: default"></i>
+                                    </button>
+                                </a>
+                                <a href="mailto:<?php echo $this->options->Email; ?>" class="mdui-ripple mdui-tab-active">
+                                    <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'Mail', position: 'top'}">
+                                        <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/mail.svg'); ?>);cursor: default"></i>
+                                    </button>
                             </a>
-                            <a href="<?php echo $this->options->qqUrl; ?>" target="_blank" rel="external nofollow noopener" class="mdui-ripple mdui-tab-active">
-                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'QQ', position: 'top'}">
-                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/qq-1.svg'); ?>);cursor: default"></i>
-                                </button>
-                            </a>
-                            <a href="mailto:<?php echo $this->options->Email; ?>" class="mdui-ripple mdui-tab-active">
-                                <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-tooltip="{content: 'Mail', position: 'top'}">
-                                    <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/mail.svg'); ?>);cursor: default"></i>
-                                </button>
-                            </a>
-                        </div>
-                        <div class="mdui-typo"><?php echo get_themeCopyright(); ?></div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</footer>
+                            </div>
+                            <div class="mdui-typo"><?php echo get_themeCopyright(); ?></div>
+					    </div>
+				    </div>
+			    </div>
+		    </div>
+	    </div>
+    </footer>
+</div>
 <?php $this->footer(); ?>
 <script src="<?php echo get_assetUrl('assets/js/miomoe-v3.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/mdui.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/view-image.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
-<script src="<?php echo get_assetUrl('assets/js/jquery-3.7.1.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
-<script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/js/sweetalert2.all.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/code/prism.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script src="<?php echo get_assetUrl('assets/code/clipboard.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
-<script>
-//pjax 刷新
-$(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
-    container: '#pjax-container',
-    fragment: '#pjax-container',
-    timeout: 3000
-}).on('pjax:send',
-function() {
-    NProgress.start();//加载动画效果开始
-
-}).on('pjax:complete',
-function() {
-NProgress.done();//加载动画效果结束
-imageeffct();//灯箱函数重载
-setupContents();//某个函数重载
-lue();//lue函数重载
-reHighlightCodeBlock();//代码高亮函数重载
-if ($('.ds-thread').length > 0) { if (typeof DUOSHUO !== 'undefined') DUOSHUO.EmbedThread('.ds-thread'); else $.getScript("https://www.ihewro.com/duoshuo/embedhw4.min.js"); }
-});//多说模块重载
-</script>
 <?php $this->options->jsStyleCode(); ?>
 </body>
 </html>

@@ -30,3 +30,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     </div>
 </div>
 </div>
+<script>
+    $('#comment-form').on('submit', function(event) {
+        event.preventDefault(); // 阻止默认提交
+        const form = $(this);
+        $.post(form.attr('action'), form.serialize(), function(response) {
+            // 处理提交成功后的逻辑
+            loadComments(); // 重新加载评论
+        }).fail(function() {
+            alert('提交评论失败，请重试。');
+        });
+    });
+</script>

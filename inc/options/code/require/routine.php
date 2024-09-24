@@ -15,7 +15,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             'https://ss.bscstorage.com/wpteam-shushuicu/'=> _t('⭐️白山云⭐️'), 
             'https://cdn.jsdmirror.com/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('⭐️JsdMirror⭐️'), 
             'https://cdn.jsdelivr.net/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(官方源'), 
-            'https://jsdelivr.shushu.icu/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(鼠子源'), 
+            // 'https://jsdelivr.shushu.icu/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(鼠子源'), 
             'https://jsd.nmmsl.top/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(荣6源'), 
             'https://jsd.vxo.im/gh/ShuShuicu/typecho-miomoe-theme-v3@master/'=> _t('JsDelivr(Yize源'), 
         ),  

@@ -133,3 +133,22 @@ document.body.oncopy = function () {
         item.className = item.className == '' ? lineNumberClassName : item.className + ' ' + lineNumberClassName;
     });
 })();
+
+// 固定footer
+function checkPosition() {
+    const bottomDiv = document.getElementById('bottom');
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.body.offsetHeight;
+
+    if (documentHeight < windowHeight) {
+        bottomDiv.style.position = 'absolute';
+        bottomDiv.style.bottom = '0';
+    } else {
+        bottomDiv.style.bottom = '0';
+    }
+    bottomDiv.style.width = '100%'; // 保持宽度设置
+}
+
+window.addEventListener('load', checkPosition);
+window.addEventListener('resize', checkPosition);
+window.addEventListener('scroll', checkPosition);

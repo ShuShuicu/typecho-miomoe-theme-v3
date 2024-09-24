@@ -26,11 +26,37 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/sweetalert2.min.css'); ?>?v=<?php echo get_ver(); ?>">
     <link rel="stylesheet" href="<?php echo get_assetUrl('assets/code/styles/' . $this->options->CodePrettifyCSS . '.css'); ?>?v=<?php echo get_ver(); ?>">
     <link href="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" rel="icon" />
+    <script src="<?php echo get_assetUrl('assets/js/jquery-3.7.1.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+    <script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
     <?php $this->options->cssStyleCode(); ?>
 </head>
+<script>
+        $(document).ready(function() {
+            // PJAX
+            $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
+                container: '#pjax-container',
+                fragment: '#pjax-container',
+                timeout: 3000
+            });
 
+            $(document).on('pjax:send', function() {
+                NProgress.start();
+            });
+
+            $(document).on('pjax:complete', function() {
+                NProgress.done();
+                mdui.Tooltip.init(); // 重新初始化工具提示
+                console.log('PJAX complete event triggered');
+            });
+
+            // 初始化工具提示
+            mdui.Tooltip.init();
+        });
+    </script>
 <body class="mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-<?php echo $this->options->themePrimary ? $this->options->themePrimary : $this->options->themePrimary . 'blue-grey'; ?> mdui-theme-accent-<?php echo $this->options->accentPrimary ? $this->options->accentPrimary : $this->options->accentPrimary . 'indigo'; ?> mdui-loaded" id="top">
-    <div class="app" id="pjax-container">
+    <div class="app">
         <header class="appbar mdui-appbar mdui-appbar-fixed mdui-appbar-scroll-hide">
             <div class="mdui-toolbar mdui-color-theme">
 
