@@ -8,7 +8,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
 <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-dialog="{target: '#share'}">
-    <img src="<?php $this->options->themeUrl('assets/images/svg/share.svg'); ?>" />
+    <img src="<?php $this->options->themeUrl('assets/images/svg/share.svg'); ?>" class="mdui-ripple mdui-img-fluid mdui-img-rounded" />
 </button>
 <div class="mdui-dialog" id="share" style="border-radius: 8px">
     <div class="mdui-dialog-title mdui-text-truncate">分享本文<small> · <?php $this->title() ?></small></div>

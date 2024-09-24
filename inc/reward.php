@@ -8,30 +8,15 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
 <button class="mdui-btn mdui-btn-icon mdui-text-color-theme-icon" mdui-dialog="{target: '#reward'}">
-    <img src="<?php $this->options->themeUrl('assets/images/svg/reward.svg'); ?>" />
+    <img src="<?php $this->options->themeUrl('assets/images/svg/reward.svg'); ?>" class="mdui-ripple mdui-img-fluid mdui-img-rounded" />
 </button>
-<div class="mdui-dialog" id="reward" style="border-radius: 8px">
+<div class="mdui-typo mdui-dialog" id="reward" style="border-radius: 8px">
     <div class="mdui-dialog-title mdui-text-truncate">打赏作者<small> · <?php $this->author() ?></small></div>
     <div class="mdui-divider"></div>
     <div class="mdui-dialog-content">
-        <div class="mdui-tab mdui-tab-full-width" mdui-tab>
-            <a href="#微信" class="mdui-ripple mdui-tab-active">
-                <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/wechat.svg'); ?>);cursor: default"></i>
-                <label>微信</label>
-            </a>
-            <a href="#支付宝" class="mdui-ripple">
-                <i class="miov3-icon" style="background-image: url(<?php $this->options->themeUrl('assets/images/svg/alipay.svg'); ?>);cursor: default"></i>
-                <label>支付宝</label>
-            </a>
-        </div>
         <div class="mdui-divider"></div>
-        <div id="微信">
-            <img class="mdui-center" src="<?php echo $this->options->rewardWeChatPay ? $this->options->rewardWeChatPay : $this->options->themeUrl . '/assets/images/wechat-pay.jpg'; ?>">
-        </div>
-
-        <div id="支付宝">
-            <img class="mdui-center" src="<?php echo $this->options->rewardAliPay ? $this->options->rewardAliPay : $this->options->themeUrl . '/assets/images/noscreen.png'; ?>">
-        </div>
+        
+            <img class="mdui-center" src="<?php echo $this->options->rewardPayImg ? $this->options->rewardPayImg : $this->options->themeUrl . '/assets/images/wechat-pay.jpg'; ?>">
 
     </div>
     <div class="mdui-dialog-actions">

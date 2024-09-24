@@ -7,6 +7,15 @@ a {
     color: unset;
     text-decoration: unset;
 }
+
+#sidebar .mdui-card-header img:hover {
+    border-radius: 50%;
+    border: 2px solid rgb(255, 196, 0);
+    transition: transform 0.5s;
+    cursor: pointer;
+    transform: rotate(360deg);
+}
+
 .mdui-typo img {
     border-radius: 8px;
 }
@@ -15,7 +24,6 @@ a {
     background-position: center center !important;
     background-size: cover !important;
 }
-
 .miov3-icon {
   display: inline-block;
   background-size: contain;

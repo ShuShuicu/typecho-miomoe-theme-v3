@@ -173,23 +173,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 
     // 打赏
     // 微信
-    $rewardWeChatPay = new Typecho_Widget_Helper_Form_Element_Text(
-        'rewardWeChatPay',
+    $rewardPayImg = new Typecho_Widget_Helper_Form_Element_Text(
+        'rewardPayImg',
         NULL,
         '' . THEME_URL . '/assets/images/wechat-pay.jpg',
-        _t('微信打赏码'),
-        _t('请填入微信打赏码链接。')
+        _t('收款码'),
+        _t('请填入收款打赏码链接。')
     );
-    $form->addInput($rewardWeChatPay);
-    // 支付宝
-    $rewardAliPay = new Typecho_Widget_Helper_Form_Element_Text(
-        'rewardAliPay',
-        NULL,
-        '' . THEME_URL . '/assets/images/noscreen.png',
-        _t('支付宝收款码'),
-        _t('请填入支付宝收款码链接。<hr>')
-    );
-    $form->addInput($rewardAliPay);
+    $form->addInput($rewardPayImg);
     
     // 侧边
     $tabCategorie = new Typecho_Widget_Helper_Form_Element_Select(  

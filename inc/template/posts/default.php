@@ -32,7 +32,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                     <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">timer</i></span>
                     <span class="mdui-chip-title"><?php $this->date(); ?></span>
                 </div>
-                <div class="mdui-float-right">
+                <div class="mdui-float-right" data-pjax="false">
                     <?php $this->need('inc/reward.php'); ?>
                     <?php $this->need('inc/share.php'); ?>
                 </div>
@@ -59,7 +59,9 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
-<?php $this->need('comments.php'); ?>
+<?php if ($this->comments()->have() || $this->allow('comment')): ?>
+    <?php $this->need('comments.php'); ?>
+<?php endif; ?>
 </div>
 <?php 
 $this->need('sidebar.php'); 

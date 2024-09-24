@@ -38,7 +38,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </div>
     </div>
-    <footer id="bottom" style="display: block;unicode-bidi: isolate;">
+    <footer id="bottom" style="margin-top: auto;">
         <div class="mdui-valign">
             <img class="mdui-center" src="<?php $this->options->themeUrl('assets/images/end.png'); ?>"></img>
         </div>
@@ -96,32 +96,33 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <script src="<?php echo get_assetUrl('assets/js/jquery.pjax.min.js'); ?>?v=<?php echo get_ver(); ?>"></script>
 <script>
     $(document).ready(function() {
-        // PJAX
-        $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax])', {
+        var savedDivContent; // 用于保存 div 内容的变量
+
+        // PJAX 初始化，过滤规则中忽略 [data-pjax="false"] 的链接
+        $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax], [data-pjax="false"])', {
             container: '#pjax-container',
             fragment: '#pjax-container',
             timeout: 3000
         });
 
+        // PJAX 请求发送时触发进度条
         $(document).on('pjax:send', function() {
             NProgress.start();
+            // 在发送 PJAX 请求前缓存 #pjax-no 的内容
+            savedDivContent = $('#pjax-no').html();
         });
 
+        // PJAX 完成时处理逻辑
         $(document).on('pjax:complete', function() {
-            NProgress.done();
+            NProgress.done(); // 完成进度条
+            $('#pjax-no').html(savedDivContent); // 恢复 #pjax-no 的内容
             mdui.Tooltip.init(); // 重新初始化工具提示
-            console.log('PJAX complete event triggered');
 
-            // 代码高亮
+            // 代码高亮处理，如果 Prism 可用
             if (typeof Prism !== 'undefined') {
-                var pres = document.getElementsByTagName('pre');
-                for (var i = 0; i < pres.length; i++) {
-                    if (pres[i].getElementsByTagName('code').length > 0) {
-                        pres[i].className = 'line-numbers';
-                    }
-                }
-                Prism.highlightAll(true, null);
+                Prism.highlightAll(); // 使用 Prism.js 的 highlightAll 方法来重新高亮所有代码块
             }
+            console.log('PJAX complete event triggered');
         });
 
         // 初始化工具提示

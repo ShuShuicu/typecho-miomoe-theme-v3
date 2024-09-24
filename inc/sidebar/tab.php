@@ -10,9 +10,10 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <div class="mdui-m-y-2 mdui-card mdui-hoverable" style="border-radius: 8px;">
     <div class="mdui-card-media mdui-card-content">
         <div class="mdui-tab mdui-tab-full-width" mdui-tab>
-            <a href="#分类归档" class="mdui-ripple">分类归档</a>
-            <a href="#随机文章" class="mdui-ripple">随机文章</a>
+            <a href="#分类归档" class="mdui-ripple" data-pjax="false">分类归档</a>
+            <a href="#随机文章" class="mdui-ripple" data-pjax="false">随机文章</a>
         </div>
+
         <div class="mdui-divider"></div>
 
         <div id="分类归档">
