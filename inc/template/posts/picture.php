@@ -28,30 +28,26 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
             <div class="mdui-divider"></div>
             <div class="mdui-card-actions">
-            <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">folder</i></span>
-                    <span class="mdui-chip-title"><?php $this->category(',', true, '暂无分类'); ?></span>
-                </div>
                 <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">local_offer</i></span>
-                    <span class="mdui-chip-title"><?php $this->tags(',', true, '暂无标签'); ?></span>
+                    <span class="mdui-chip-icon mdui-color-theme">
+                        <img src="<?php echo $this->options->avatarUrl ? $this->options->avatarUrl : $this->options->themeUrl . '/assets/images/avatar.jpg'; ?>" class="mdui-img-fluid" /></span>
+                    <span class="mdui-chip-title"><?php $this->author(); ?></span>
                 </div>
+                <div class="mdui-float-right" data-pjax="false">
                 <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">bookmark</i></span>
-                    <span class="mdui-chip-title">共<?php art_count($this->cid); ?>字 </span>
+                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">comment</i></span>
+                    <span class="mdui-chip-title"><a href="#comments"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t(' %d 条评论')); ?></a></span>
                 </div>
                 <div class="mdui-chip">
                     <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">timer</i></span>
                     <span class="mdui-chip-title"><?php $this->date(); ?></span>
                 </div>
-                <div class="mdui-float-right" data-pjax="false">
-                    <?php $this->need('inc/share.php'); ?>
                 </div>
             </div>
             <div class="mdui-divider"></div>
             <div class="mdui-typo mdui-card-content post-container" id="content" style="padding-left:4%;padding-right:4%;font-size: 17px;">
                 <?php $this->content(); ?>
-            </div>
+                </div>
             <div class="mdui-typo mdui-card">
                 <div class="mdui-card-content">
                     <div>
@@ -66,13 +62,14 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                         </strong>
                         <?php echo $this->options->postCopyright; ?>
                         <div class="mdui-float-right" data-pjax="false">
-                            <?php $this->need('inc/reward.php'); ?>
+                            <?php $this->need('inc/functions/posts/share.php'); ?>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<?php $this->need('inc/functions/posts/end.php'); ?>
 <?php if ($this->comments()->have() || $this->allow('comment')): ?>
     <?php $this->need('comments.php'); ?>
 <?php endif; ?>
