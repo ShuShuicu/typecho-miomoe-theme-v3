@@ -5,7 +5,7 @@
 */
 body {
     font-weight:500;
-    background: url(../images/background.webp) 
+    background: url(background.webp) 
     no-repeat 0 0;
     background-size: cover;
     background-attachment: fixed;

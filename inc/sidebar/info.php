@@ -9,12 +9,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
     <div class="mdui-m-y-2 mdui-card mdui-hoverable" style="border-radius: 8px;">
         <div class="mdui-card-header">
-            <img class="mdui-card-header-avatar" src="<?php echo $this->options->sidebarImg ? $this->options->sidebarImg : $this->options->themeUrl . '/assets/images/avatar.jpg'; ?>" />
+            <img class="mdui-card-header-avatar" src="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" />
             <div class="mdui-card-header-title">
-                <?php echo $this->options->sidebarTitle ? $this->options->sidebarTitle : $this->options->title(); ?>
+                <?php $this->options->title(); ?>
             </div>
             <div class="mdui-card-header-subtitle">
-                <?php echo $this->options->sidebarSubTitle ? $this->options->sidebarSubTitle : $this->options->subTitle; ?>
+                <?php $this->options->subTitle(); ?>
             </div>
         </div>
         <div class="mdui-divider"></div>

@@ -22,9 +22,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 -->
 <head>
     <meta charset="<?php $this->options->charset(); ?>">
-    <link rel="dns-prefetch" href="//ss.bscstorage.com">
-    <meta name="renderer" content="webkit">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="x-dns-prefetch-control" content="on" />
+    <link rel="dns-prefetch" href="//ss.bscstorage.com" />
+    <link rel="dns-prefetch" href="//cdn.staticfile.org" />
+    <link rel="dns-prefetch" href="//cdn.jsdmirror.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.com" />
+    <meta name="renderer" content="webkit" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title><?php $this->archiveTitle(array( 
 	    'category' => _t('「%s」分类'), 
         'search'   => _t('搜索结果'), 
@@ -33,11 +37,11 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 	), '', ' - '); ?><?php if ($this->_currentPage > 1) echo '「第' . $this->_currentPage . '页」 - '; ?><?php $this->options->title(); ?><?php if ($this->is('index') && !empty($this->options->subTitle)): ?> - <?php $this->options->subTitle(); ?><?php endif; ?></title>
     <?php $this->header(); ?>
     <link href="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" rel="icon" />
-    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/miomoe-v3.css'); ?>?v=<?php echo get_ver(); ?>">
-    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/mdui.min.css'); ?>?v=<?php echo get_ver(); ?>">
-    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/sweetalert2.min.css'); ?>?v=<?php echo get_ver(); ?>">
-    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/code/styles/' . $this->options->CodePrettifyCSS . '.css'); ?>?v=<?php echo get_ver(); ?>">
-    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/nprogress.min.css'); ?>?v=<?php echo get_ver(); ?>">
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/miomoe-v3.css'); ?>?v=<?php echo get_ver(); ?>" />
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/mdui.min.css'); ?>?v=<?php echo get_ver(); ?>" />
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/sweetalert2.min.css'); ?>?v=<?php echo get_ver(); ?>" />
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/code/styles/' . $this->options->CodePrettifyCSS . '.css'); ?>?v=<?php echo get_ver(); ?>" />
+    <link rel="stylesheet" href="<?php echo get_assetUrl('assets/css/nprogress.min.css'); ?>?v=<?php echo get_ver(); ?>" />
     <?php $this->options->cssStyleCode(); ?>
 </head>
 <body class="mdui-appbar-with-toolbar mdui-theme-auto mdui-theme-layout-auto mdui-theme-primary-<?php echo $this->options->themePrimary ? $this->options->themePrimary : $this->options->themePrimary . 'blue-grey'; ?> mdui-theme-accent-<?php echo $this->options->accentPrimary ? $this->options->accentPrimary : $this->options->accentPrimary . 'indigo'; ?> mdui-loaded" id="top">

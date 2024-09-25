@@ -44,8 +44,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 <?php
     $loadPagination = !($this->is('post') || $this->is('page') || $this->is('single'));
 ?>
-    <?php if ($loadPagination): ?>
-    <div class="mdui-m-y-1 mdui-valign">
+<?php if ($loadPagination): ?>
+    <div class="mdui-m-y-1 mdui-valign mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px">
         <?php $this->pageLink('<div class="mdui-ripple mdui-btn mdui-btn-icon mdui-color-theme"><i class="material-icons mdui-icon">chevron_left</i></div>'); ?>
         <span class="mdui-typo-body-1-opacity mdui-text-center" style="flex-grow:1">第 <?php echo $this->_currentPage > 1 ? $this->_currentPage : 1; ?> 页 / 共 <?php echo ceil($this->getTotal() / $this->parameter->pageSize); ?> 页</span>
         <?php $this->pageLink('<div class="mdui-ripple mdui-btn mdui-btn-icon mdui-color-theme"><i class="material-icons mdui-icon">chevron_right</i></div>','next'); ?>

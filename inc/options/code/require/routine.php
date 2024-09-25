@@ -36,6 +36,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         _t('请填入作者头像链接，没有则显示神鹰黑手哥。')
     );
     $form->addInput($avatarUrl);
+    // 文章底部作者说明
+    $postEndAuthorInfo = new Typecho_Widget_Helper_Form_Element_Text(
+        'postEndAuthorInfo', 
+        NULL, 
+        '做个小网站，搞点小意思。', 
+        _t('文章底部作者介绍'), 
+        _t('输入文章底部作者介绍说明。')
+    );
+    $form->addInput($postEndAuthorInfo);
 
     // QQ
     $qqUrl = new Typecho_Widget_Helper_Form_Element_Text(
@@ -46,7 +55,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         _t('输入QQ加好友或加群链接，将会在网站底部显示的QQ图标点击跳转。')
     );
     $form->addInput($qqUrl);
-    // QQ
+    // 邮箱
     $Email = new Typecho_Widget_Helper_Form_Element_Text(
         'Email', 
         NULL, 
@@ -239,40 +248,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     );   
     $form->addInput($tabArchiving);
 
-    // 侧边标题 
-    $sidebarTitle = new Typecho_Widget_Helper_Form_Element_Text(
-        'sidebarTitle', 
-        NULL, 
-        '' . Helper::options()->title . '', 
-        _t('侧边标题'), 
-        _t('请输入侧边标题，一般为网站或作者名称，留空则显示站点标题。')
-    );
-    $form->addInput($sidebarTitle);
-    // 侧边副标题
-    $sidebarSubTitle = new Typecho_Widget_Helper_Form_Element_Text(
-        'sidebarSubTitle', 
-        NULL, 
-        '' . Helper::options()->title . '', 
-        _t('侧边副标题'), 
-        _t('请输入侧边副标题，一般为网站关键词或作者说明，留空则显示站点副标题。')
-    );
-    $form->addInput($sidebarSubTitle);
-    // 侧边图片
-    $sidebarImg = new Typecho_Widget_Helper_Form_Element_Text(
-        'sidebarImg', 
-        NULL, 
-        '' . THEME_URL . '/assets/images/favicon.ico',
-        _t('侧边图片'), 
-        _t('请输入侧边图片链接，一般为网站favicon或作者头像，留空则显示神鹰黑手哥。')
-    );
-    $form->addInput($sidebarImg);
     // 侧边介绍
     $sidebarInfo = new Typecho_Widget_Helper_Form_Element_Textarea(
         'sidebarInfo', 
         NULL, 
         '' . Helper::options()->description . '', 
         _t('侧边介绍'), 
-        _t('请输入侧边介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font>')
+        _t('请输入侧边顶部介绍说明，一般为网站说明或作者介绍，留空则显示站点的Description。<font color="red">支持HTML代码。</font>')
     );
     $form->addInput($sidebarInfo);
     // 侧边自定义代码

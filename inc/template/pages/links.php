@@ -30,7 +30,8 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             <?php echo $this->options->linksContent; ?>
         </div>
         <div class="mdui-card-content post-container" id="申请友链" style="padding-left:4%;padding-right:4%;">
-            <?php require_once 'links-comments.php'; ?>
+            
+            <?php $this->need('inc/functions/pages/links-comments.php'); ?>
         <div class="mdui-table-fluid">
     <table class="mdui-table mdui-table-hoverable mdui-typo">
         <thead>

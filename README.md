@@ -1,9 +1,26 @@
-## 介绍
-主题正式改名 MioV3 (原MioMoeV3)
+# 介绍
 
-有细心的朋友可能发现了主题的screenshot.png也就是主题的封面预览图是GBC(GIRLS BAND CRY)，V2版是孤独摇滚，V1版是轻音少女，大家可以猜猜V4会不会是MyGO呢~
+MioV3 主题
+> 主题正式改名 MioV3 (原MioMoeV3)
+
+![MioV3Logo](assets/images/logo.png)
+
+MioV3主题是一款基于MDUI的Typecho博客主题，主题名称来源于《轻音少女》中的秋山澪角色，主题风格清新，简洁，优雅，主题颜色为黑白，支持多种颜色选择，支持多种主题风格，支持多种文章顶图风格。
+
+> 有细心的朋友可能发现了主题的screenshot.png也就是主题的封面预览图是GBC(GIRLS BAND CRY)，V2版是孤独摇滚，V1版是轻音少女，大家可以猜猜V4会不会是MyGO呢~
+
+## 截图演示
+
+![日间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-2.png)
+![夜间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-1.png)
 
 ### 更新日志
+#### 1.1.4
+- 优化header
+- 优化上下页按钮
+- 修改文章排版
+- 新增文章作者介绍
+
 #### 1.1.3
 - 修复Drive下载
 
