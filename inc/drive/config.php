@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * Drive配置文件代码
  * @package MioV3
@@ -7,7 +7,8 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 
-$driveDir = $this->options->driveDir ? $this->options->driveDir : $this->options->driveDir . 'files'(); 
+// 获取基础目录
+$driveDir = $this->options->driveDir ? $this->options->driveDir : 'files';
 
 session_start();
 
@@ -17,15 +18,15 @@ if (!isset($_SESSION['token'])) {
 }
 $token = $_SESSION['token']; // 从会话中获取 token
 
-$baseDir = $driveDir; // 基础目录，隐藏在URL中
+$baseDir = __DIR__ . '/' . $driveDir; // 使用绝对路径，确保路径正确
 $relativeDir = isset($_GET['dir']) ? $_GET['dir'] : '';
-$path = __DIR__ . '/' . $baseDir . '/' . $relativeDir;
+$path = $baseDir . '/' . $relativeDir;
 
 // 如果存在文件下载请求
 if (isset($_GET['file']) && isset($_GET['token'])) {
     $file = basename($_GET['file']); // 仅获取文件名，避免路径注入
     $relativePath = dirname($_GET['file']); // 获取相对路径（如果存在）
-    $downloadPath = __DIR__ . '/' . $baseDir . '/' . $relativePath . '/' . $file;
+    $downloadPath = $baseDir . '/' . $relativePath . '/' . $file;
 
     // 验证文件是否存在
     if (!is_file($downloadPath)) {
@@ -37,6 +38,11 @@ if (isset($_GET['file']) && isset($_GET['token'])) {
         die("无效的 token。");
     }
 
+    // 清空输出缓冲区，避免页面内容输出到下载文件中
+    if (ob_get_length()) {
+        ob_end_clean();
+    }
+
     // 处理文件下载
     header('Content-Description: File Transfer');
     header('Content-Type: application/octet-stream');
@@ -45,6 +51,8 @@ if (isset($_GET['file']) && isset($_GET['token'])) {
     header('Cache-Control: must-revalidate');
     header('Pragma: public');
     header('Content-Length: ' . filesize($downloadPath));
+    
+    // 输出文件内容
     readfile($downloadPath);
     exit;
 }

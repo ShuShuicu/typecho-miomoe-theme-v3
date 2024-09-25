@@ -35,7 +35,7 @@ require 'config.php';
         // 显示文件
         foreach ($files as $file) {
             $itemPath = $relativeDir . '/' . $file;
-            echo '<a href="?file=' . urlencode($itemPath) . '&token=' . urlencode($token) . '">
+            echo '<a href="?file=' . urlencode($itemPath) . '&token=' . urlencode($token) . '" data-pjax="false">
             <li class="mdui-list-item mdui-ripple">
                 <i class="mdui-list-item-icon mdui-icon material-icons">file_download</i>
                 <div class="mdui-list-item-content">' . htmlspecialchars($file) . '</div>
