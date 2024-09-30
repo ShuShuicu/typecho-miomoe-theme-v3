@@ -12,7 +12,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <div class="cancel-comment-reply">
         <?php $comments->cancelReply(); ?>
     </div>
-    <div class="mdui-m-y-2 mdui-typo mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px">
+    <div class="mdui-m-y-2 mdui-typo mdui-card mdui-hoverable mdui-card-content">
         <form method="post" action="<?php $this->commentUrl() ?>" id="comment-form" role="form">
             <?php if ($this->user->hasLogin()): ?>
                 <?php _e('登录身份: '); ?><a href="<?php $this->options->profileUrl(); ?>"><?php $this->user->screenName(); ?></a>. <a href="<?php $this->options->logoutUrl(); ?>" title="Logout"><?php _e('退出'); ?> &raquo;</a>

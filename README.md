@@ -9,12 +9,14 @@ MioV3主题是一款基于MDUI的Typecho博客主题，主题名称来源于《�
 
 > 有细心的朋友可能发现了主题的screenshot.png也就是主题的封面预览图是GBC(GIRLS BAND CRY)，V2版是孤独摇滚，V1版是轻音少女，大家可以猜猜V4会不会是MyGO呢~
 
-## 截图演示
-
-![日间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-2.png)
-![夜间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-1.png)
-
 ### 更新日志
+#### 1.1.5
+- 优化pjax
+- 优化footer
+- 优化文章标题
+- 优化文章排版
+- 切换默认WeAvatar源
+
 #### 1.1.4
 - 优化header
 - 优化上下页按钮
@@ -120,3 +122,8 @@ MioV3主题是一款基于MDUI的Typecho博客主题，主题名称来源于《�
 2.  新建 Feat_xxx 分支
 3.  提交代码
 4.  新建 Pull Request
+5. 
+##### 截图演示
+
+![日间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-2.png)
+![夜间模式](https://ss.bscstorage.com/wpteam-shushuicu/miomoe/miov3-1.png)

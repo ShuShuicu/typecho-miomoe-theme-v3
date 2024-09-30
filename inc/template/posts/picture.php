@@ -9,7 +9,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 ?>
 <div class="mdui-m-y-2 mdui-col-xl-9 mdui-col-lg-8 mdui-col-md-8 mdui-col-sm-12 mdui-col-xs-12" id="pjax-container">
     <div class="mdui-center">
-        <div class="mdui-card mdui-hoverable" style="border-radius: 8px">
+        <div class="mdui-card mdui-hoverable">
             <div class="mdui-card-media mdui-hoverable">
             <?php  
                 // 假设get_ArticleThumbnail函数返回第一张图片的URL，如果没有则返回null  
@@ -35,12 +35,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
                 </div>
                 <div class="mdui-float-right" data-pjax="false">
                 <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">comment</i></span>
-                    <span class="mdui-chip-title"><a href="#comments"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t(' %d 条评论')); ?></a></span>
+                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">bookmark</i></span>
+                    <span class="mdui-chip-title">共<?php art_count($this->cid); ?>字</span>
                 </div>
-                <div class="mdui-chip">
-                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">timer</i></span>
-                    <span class="mdui-chip-title"><?php $this->date(); ?></span>
+                <div class="mdui-chip"><a href="#comments">
+                    <span class="mdui-chip-icon mdui-color-theme"><i class="mdui-icon material-icons">comment</i></span>
+                    <span class="mdui-chip-title"><?php $this->commentsNum(_t('暂无评论'), _t('仅有一条评论'), _t(' %d 条评论')); ?></span></a>
                 </div>
                 </div>
             </div>

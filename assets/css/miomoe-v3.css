@@ -3,6 +3,22 @@
  * Copyright 2024 ShuShuicu
  * Licensed under MIT
 */
+html, body {
+    height: 100%; /* 保证页面高度为 100% */
+    margin: 0; /* 去除默认边距 */
+}
+body {
+    display: flex;
+    flex-direction: column; /* 垂直排列，确保 footer 在底部 */
+    min-height: 100vh; /* 页面高度至少 100% 浏览器高度 */
+}
+#content {
+    flex: 1; /* 主体内容自动扩展，占满剩余空间 */
+}
+footer {
+    text-align: center; /* 居中显示 */
+}
+
 a {
     color: unset;
     text-decoration: unset;
@@ -18,6 +34,9 @@ a {
 
 .mdui-typo img {
     border-radius: 8px;
+}
+body .mdui-card {
+    border-radius: 8px
 }
 .thumbnail-post {
     height: 200px;

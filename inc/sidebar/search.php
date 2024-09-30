@@ -7,7 +7,7 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
-<div class="mdui-m-y-2 mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px;">
+<div class="mdui-m-y-2 mdui-card mdui-hoverable mdui-card-content">
     <div class="mdui-textfield">
         <form method="post" action="">
             <i class="mdui-icon material-icons">search</i>

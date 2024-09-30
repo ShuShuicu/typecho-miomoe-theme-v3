@@ -115,13 +115,13 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     // Avatar
     $avatarCdn = new Typecho_Widget_Helper_Form_Element_Select(  
         'avatarCdn',  
-        array(        
-            'https://cravatar.cn/avatar/' => _t('CrAvatar'), 
-            'https://weavatar.com/avatar/'=> _t('WeAvatar'), 
+        array(
+            'https://weavatar.com/avatar/'=> _t('WeAvatar'),
+            'https://cravatar.cn/avatar/' => _t('CrAvatar'),
             'http://www.gravatar.com/avatar/'=> _t('GrAvatar'),
             'https://gravatar.shushu.icu/avatar/'=> _t('GrAvatar(代理节点)'), 
         ),  
-        'https://cravatar.cn/avatar/',          
+        'https://weavatar.com/avatar/',
         _t('Avatar'),   
         _t('请选择Avatar源，用于评论头像展示。') 
     );   

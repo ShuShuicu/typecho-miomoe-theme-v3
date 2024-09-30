@@ -7,7 +7,7 @@
  */
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
-    <div class="mdui-m-y-2 mdui-card mdui-hoverable" style="border-radius: 8px;">
+    <div class="mdui-m-y-2 mdui-card mdui-hoverable">
         <div class="mdui-card-header">
             <img class="mdui-card-header-avatar" src="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" />
             <div class="mdui-card-header-title">

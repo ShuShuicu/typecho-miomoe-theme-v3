@@ -8,7 +8,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit; 
 ?>
 <div class="mdui-m-y-5 mdui-center">
-<div class="mdui-card mdui-hoverable" style="border-radius: 8px">
+<div class="mdui-card mdui-hoverable">
     <div class="mdui-card-media mdui-card-content">
         <div class="mdui-card-primary-title mdui-text-truncate"><?php $this->title() ?></div>
         <div class="mdui-divider"></div>
@@ -32,38 +32,6 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         <div class="mdui-card-content post-container" id="申请友链" style="padding-left:4%;padding-right:4%;">
             
             <?php $this->need('inc/functions/pages/links-comments.php'); ?>
-        <div class="mdui-table-fluid">
-    <table class="mdui-table mdui-table-hoverable mdui-typo">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>本站基本信息 · <small>申请前请确保已将本站链接添加至贵站。</small></th>
-        </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>名称</td>
-                <td><?php $this->options->title(); ?></td>
-            </tr>
-            <tr>
-                <td>地址</td>
-                <td><a href="<?php $this->options->siteUrl(); ?>" target="_blank"><?php $this->options->siteUrl(); ?></a></td>
-            </tr>
-            <tr>
-                <td>图标</td>
-                <td><a href="<?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?>" target="_blank"><?php echo $this->options->faviconUrl ? $this->options->faviconUrl : $this->options->themeUrl . '/assets/images/favicon.ico'; ?></a></td>
-            </tr>
-            <tr>
-                <td>描述</td>
-                <td><?php echo $this->options->description; ?></td>
-            </tr>
-            <tr>
-                <td>申请说明</td>
-                <td><?php echo $this->options->linksInfo ? $this->options->linksInfo : $this->options->linksInfo . '暂无'; ?></td>
-            </tr>
-        </tbody>
-    </table>
-    </div>
     </div>
 </div>
 </div>

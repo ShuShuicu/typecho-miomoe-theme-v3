@@ -8,7 +8,7 @@
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
 require 'config.php'; 
 ?>
-<div class="mdui-m-y-5 mdui-card mdui-hoverable mdui-card-content" style="border-radius: 8px;" id="pjax-container">
+<div class="mdui-m-y-5 mdui-card mdui-hoverable mdui-card-content" id="pjax-container">
     <ul class="mdui-list">
     <?php
         if ($relativeDir !== '') {

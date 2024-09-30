@@ -26,7 +26,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
     <link rel="dns-prefetch" href="//ss.bscstorage.com" />
     <link rel="dns-prefetch" href="//cdn.staticfile.org" />
     <link rel="dns-prefetch" href="//cdn.jsdmirror.com" />
-    <link rel="dns-prefetch" href="//cdn.jsdelivr.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     <meta name="renderer" content="webkit" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <title><?php $this->archiveTitle(array( 
@@ -60,10 +60,12 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             echo _t('「首页」');
         } else {
             $this->archiveTitle(array(
-                'category' => _t('%s丨分类'),
-                'search'   => _t('%s丨搜索结果'),
-                'tag'      => _t('%s丨标签'),
-                'author'   => _t('%s丨发布的文章')
+                'post' => _t('文章详情'),
+                'page' => _t('页面详情'),
+                'category' => _t('分类页面'),
+                'search'   => _t('搜索结果'),
+                'tag'      => _t('标签页面'),
+                'author'   => _t('作者页面')
             ), '「', '」');
         }
         ?>
@@ -81,5 +83,5 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             </div>
         </header>
             <?php require_once 'phone-nav.php'; ?>
-    <div class="mdui-container">
+    <div class="mdui-container" id="content">
         

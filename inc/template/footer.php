@@ -99,7 +99,7 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
         var savedDivContent; // 用于保存 div 内容的变量
 
         // PJAX 初始化，过滤规则中忽略 [data-pjax="false"] 的链接
-        $(document).pjax('a[href^="<?php Helper::options()->siteUrl()?>"]:not(a[target="_blank"], a[no-pjax], [data-pjax="false"])', {
+        $(document).pjax('a:not([target="_blank"], [no-pjax], [data-pjax="false"])', {
             container: '#pjax-container',
             fragment: '#pjax-container',
             timeout: 3000
@@ -121,6 +121,15 @@ if (!defined('__TYPECHO_ROOT_DIR__')) exit;
             // 代码高亮处理，如果 Prism 可用
             if (typeof Prism !== 'undefined') {
                 Prism.highlightAll(); // 使用 Prism.js 的 highlightAll 方法来重新高亮所有代码块
+
+                // 为所有 pre 标签添加行号类
+                var pres = document.querySelectorAll('pre');
+                var lineNumberClassName = 'line-numbers';
+                pres.forEach(function (item) {
+                    if (!item.classList.contains(lineNumberClassName)) {
+                        item.className += ' ' + lineNumberClassName;
+                    }
+                });
             }
             console.log('PJAX complete event triggered');
         });
